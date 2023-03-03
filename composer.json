@@ -1,0 +1,21 @@
+{
+    "name": "ctroms/alfred-valet",
+    "description": "Alfred workflow to open valet sites in a browser or editor",
+    "type": "alfred-workflow",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Ctroms\\AlfredValet\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Chris Trombley",
+            "email": "ctroms@gmail.com"
+        }
+    ],
+    "require": {
+        "laravel/valet": "^3.3",
+        "illuminate/support": "^10.2"
+    }
+}

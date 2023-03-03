@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.ctroms.alfred.site-search-for-valet</string>
+	<key>category</key>
+	<string>Tools</string>
+	<key>connections</key>
+	<dict>
+		<key>3CE13248-025E-439F-8300-84DF750E4B5D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>8F1CC322-0DA5-4730-A958-EC65913B4C3C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>B3886B31-3987-4C49-96A5-9816A417DCD2</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B8D92801-D0D8-417D-819A-C97F479ADFDD</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>B8D92801-D0D8-417D-819A-C97F479ADFDD</key>
+		<array/>
+		<key>D07F5669-FA87-4BC7-9CAD-67518D361409</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>3CE13248-025E-439F-8300-84DF750E4B5D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>B3886B31-3987-4C49-96A5-9816A417DCD2</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Open this site in your code editor</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Chris Trombley</string>
+	<key>description</key>
+	<string>Search parked and linked sites in Laravel Valet</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Site Search for Valet</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>skipqueryencode</key>
+				<false/>
+				<key>skipvarencode</key>
+				<false/>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>{var:site1}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>8F1CC322-0DA5-4730-A958-EC65913B4C3C</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>delimiter</key>
+				<string>,</string>
+				<key>discardemptyarguments</key>
+				<false/>
+				<key>outputas</key>
+				<integer>0</integer>
+				<key>trimarguments</key>
+				<false/>
+				<key>variableprefix</key>
+				<string>site</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.split</string>
+			<key>uid</key>
+			<string>3CE13248-025E-439F-8300-84DF750E4B5D</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>valet</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>fetching sites</string>
+				<key>script</key>
+				<string>/opt/homebrew/bin/php search.php "{query}"</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>Enter a site name</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>D07F5669-FA87-4BC7-9CAD-67518D361409</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>bash edit.sh {var:site2}</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>B8D92801-D0D8-417D-819A-C97F479ADFDD</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>delimiter</key>
+				<string>,</string>
+				<key>discardemptyarguments</key>
+				<false/>
+				<key>outputas</key>
+				<integer>0</integer>
+				<key>trimarguments</key>
+				<false/>
+				<key>variableprefix</key>
+				<string>site</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.split</string>
+			<key>uid</key>
+			<string>B3886B31-3987-4C49-96A5-9816A417DCD2</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string># Site Search for Laravel Valet
+
+This workflow allows you to quickly search sites that are parked or linked with Laravel Valet, and open them in your default browser or code editor.
+
+## Setup
+
+Configure your preferred code editor in this workflows User Configuration.
+
+## Use
+
+Trigger this workflow by typing `valet`.
+
+#### Search for a site
+
+Search for a site by typing its name after the workflow trigger.
+
+#### Open a site in your default browser
+
+Select a site and press `return` to open the site's url in your default browser.
+
+#### Opoen a site path in your configured editor
+
+Select a site and press `⌘` then `return` a to open the sites path in your configured editor.</string>
+	<key>uidata</key>
+	<dict>
+		<key>3CE13248-025E-439F-8300-84DF750E4B5D</key>
+		<dict>
+			<key>xpos</key>
+			<real>290</real>
+			<key>ypos</key>
+			<real>140</real>
+		</dict>
+		<key>8F1CC322-0DA5-4730-A958-EC65913B4C3C</key>
+		<dict>
+			<key>xpos</key>
+			<real>375</real>
+			<key>ypos</key>
+			<real>110</real>
+		</dict>
+		<key>B3886B31-3987-4C49-96A5-9816A417DCD2</key>
+		<dict>
+			<key>xpos</key>
+			<real>290</real>
+			<key>ypos</key>
+			<real>290</real>
+		</dict>
+		<key>B8D92801-D0D8-417D-819A-C97F479ADFDD</key>
+		<dict>
+			<key>xpos</key>
+			<real>375</real>
+			<key>ypos</key>
+			<real>260</real>
+		</dict>
+		<key>D07F5669-FA87-4BC7-9CAD-67518D361409</key>
+		<dict>
+			<key>xpos</key>
+			<real>90</real>
+			<key>ypos</key>
+			<real>180</real>
+		</dict>
+	</dict>
+	<key>userconfigurationconfig</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string></string>
+				<key>filtermode</key>
+				<integer>0</integer>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Set your default code editor when opening site directories. This may be a Mac OS application or terminal command.</string>
+			<key>label</key>
+			<string>Editor</string>
+			<key>type</key>
+			<string>filepicker</string>
+			<key>variable</key>
+			<string>editor</string>
+		</dict>
+	</array>
+	<key>variablesdontexport</key>
+	<array/>
+	<key>version</key>
+	<string>0.1.0</string>
+	<key>webaddress</key>
+	<string>https://github.com/ctroms/alfred-site-search-for-valet</string>
+</dict>
+</plist>
