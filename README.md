@@ -1,6 +1,6 @@
 # Alfred workflow for searching Laravel Valet sites
 
-This workflow for [Aldred 5+](https://www.alfredapp.com/) allows you to quickly search sites that are parked or linked with [Laravel Valet](https://laravel.com/docs/valet), and open them in your default browser or code editor.
+This workflow for [Alfred 5+](https://www.alfredapp.com/) allows you to quickly search sites that are parked or linked with [Laravel Valet](https://laravel.com/docs/valet), and open them in your default browser or code editor.
 
 ![Alfred Search Screenshot](site-search-alfred-screenshot.png)
 
